@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class startcube : MonoBehaviour
 {
     public Rigidbody rigidbody3;
     void Start()
     {
-        Vector3 temp = new Vector3(5f, 10f, 0f);
+        Vector3 temp = new Vector(900f, 1800f, 0f);
         gameObject.transform.position = temp;
     }
 
