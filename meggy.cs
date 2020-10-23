@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class meggy : MonoBehaviour
 {
-    
     public CharacterController controller;
 
     public float speed = 10;
@@ -15,15 +14,8 @@ public class meggy : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     
-
-
     Vector3 velocity;
     bool isGrounded;
-
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -34,8 +26,6 @@ public class meggy : MonoBehaviour
             velocity.y = -2f;
         }
 
-        
-        
         if (isGrounded){
             
             if (Input.GetKeyDown(KeyCode.LeftShift)){
@@ -47,26 +37,17 @@ public class meggy : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.LeftShift)){
                 transform.localScale = new Vector3(1, 1f, 1);
             
-                speed = 10;
-            
+                speed = 10;          
             }
-
         }
         
 
         float x = Input.GetAxis("Horizontal") * speed;
         float z = Input.GetAxis("Vertical") * speed;  
-
-        
-        
-
+            
         Vector3 move = transform.right * x + transform.forward * z;
-
-        
-        
-
+              
         controller.Move(move * Time.deltaTime );
-
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -77,12 +58,4 @@ public class meggy : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
-
-    
-
-
-
-
-
-
 }
