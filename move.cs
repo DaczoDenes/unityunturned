@@ -4,26 +4,30 @@ using UnityEngine;
 
 public class move : MonoBehaviour
 {
-public float speedx;
-public float speedy;
-public float runSpeed = 3f;
-public float crouchSpeed = 0f;
-public float jumpForce = 600f;
-public float slideForce = 400f;
-bool crouch = false;
-public bool speedMode = false;
-public float turbo = 2f;
+    public GameObject gun;
+    public GameObject body;
+    public float speedx;
+    public float speedy;
+    public float runSpeed = 3f;
+    public float crouchSpeed = 0f;
+    public float jumpForce = 600f;
+    public float slideForce = 400f;
+    bool crouch = false;
+    public bool speedMode = false;
+    public float turbo = 2f;
 
-public Rigidbody rb;
+    public Rigidbody rb;
 
-// ground check
-public Transform  groundCheck;
-public float groundDistance = 0.4f;
-public bool grounded;
-public LayerMask ground;
+    // ground check
+    public Transform  groundCheck;
+    public float groundDistance = 0.4f;
+    public bool grounded;
+    public LayerMask ground;
 
     void Update()
     {
+        gun.transform.position(body.transform.position.x - 2, body.transform.position.y, body.transform.position.z)
+        
         //SPEED MODE
         if(speedMode == false){
             turbo = 1;
